@@ -5,6 +5,8 @@ const Input = () => {
     return (<div className={'input-component'}>
         <input />
         <button>Submit</button>
+
+
     </div>);
 }
 
