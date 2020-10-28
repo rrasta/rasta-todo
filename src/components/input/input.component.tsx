@@ -3,10 +3,8 @@ import './input.component.scss';
 
 const Input = () => {
     return (<div className={'input-component'}>
-        <input />
+        <input placeholder={'Enter todo here'}/>
         <button>Submit</button>
-
-
     </div>);
 }
 
