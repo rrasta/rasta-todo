@@ -1,0 +1,23 @@
+.todo-item {
+  display: flex;
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  span {
+    font-family: Lato, serif;
+    font-size: 10pt;
+
+    transition: opacity 2s ease-in-out;
+
+    &.checked {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+  }
+
+  button {
+    margin-left: auto;
+  }
+}
