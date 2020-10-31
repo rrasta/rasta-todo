@@ -10,9 +10,6 @@ export interface ITodoItem {
     checked: boolean;
 }
 
-// string[] => ['a','b','c']
-// ITodoItem[] => [{ text: 'a', checked: false }, { text: 'b', checked: false } ]
-
 const TodoList = () => {
     const [todos, setTodos] = useState<ITodoItem[]>( []);
     const addNewTodoItem = (todoItem: string) => {
