@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { ITodoItem } from '../todo-list/todo-list.component';
 import './todo-item.component.scss';
 
@@ -19,7 +21,9 @@ const TodoItem = ({ todo, onChecked, onDelete }: ITodoItemProps) => {
             onChange={handleOnChange}
         />
         <span className={`${checked ? 'checked' : ''}`}>{text}</span>
-        {checked && (<button onClick={onDelete.bind(null, id)}>delete</button>)}
+        {checked && (<button onClick={onDelete.bind(null, id)}>
+            <FontAwesomeIcon icon={faTrash} />
+        </button>)}
     </li>);
 }
 
