@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Input from '../input/input.component';
 import TodoItem from '../todo-item/todo-item.component';
 
 import './todo-list.component.scss';
+import { useList } from '../../common/common';
 
 export interface ITodoItem {
     id: string;
@@ -11,46 +12,32 @@ export interface ITodoItem {
 }
 
 const TodoList = () => {
-    const [todos, setTodos] = useState<ITodoItem[]>( []);
-    const addNewTodoItem = (todoItem: string) => {
-        if (todoItem === '') {
-            return;
+    const [list, addItem, updateItem, removeItem] = useList<ITodoItem>([]);
+    const addNewTodoItem = (text: string) => {
+        if (text !== '') {
+            addItem({ text, checked: false })
         }
-
-        setTodos([
-            ...todos,
-            {
-                id: `item-${new Date().getTime()}`,
-                text: todoItem,
-                checked: false
-            }
-        ]);
     }
     const handleOnChecked = (id: string) => {
-        setTodos(
-            todos.map(todo => {
-                if (todo.id === id) {
-                    return {
-                        id: todo.id,
-                        text: todo.text,
-                        checked: !todo.checked
-                    }
-                }
-
-                return todo;
-            })
-        )
+        if (id !== '') {
+            updateItem(id, (item) => ({ ...item, checked: !item.checked }));
+        }
     };
     const handleOnDelete = (id: string) => {
-        // TODO usuwanie elementu z listy
-        // google it: JS array FILTER method
+        if (id !== '') {
+            removeItem(id);
+        }
     };
+
+    useEffect(() => {
+        console.log(list);
+    },[list])
 
     return (
         <div className="todo-list">
             <Input onSubmit={addNewTodoItem} />
             <ul>
-                {todos.map(todo => (
+                {list.map(todo => (
                     <TodoItem
                         key={todo.id}
                         todo={todo}
@@ -64,3 +51,4 @@ const TodoList = () => {
 }
 
 export default TodoList;
+
