@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Input from '../input/input.component';
 import TodoItem from '../todo-item/todo-item.component';
+import { useList } from '../../common/common';
 
 import './todo-list.component.scss';
-import { useList } from '../../common/common';
 
 export interface ITodoItem {
     id: string;

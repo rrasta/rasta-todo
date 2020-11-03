@@ -42,7 +42,7 @@ function App() {
                         <Route path="/login">
                             <LoginPage />
                         </Route>
-                        <Route path="/profil">
+                        <Route path="/profile">
                             <ProfilePage />
                         </Route>
                         <Route path="/">
