@@ -1,0 +1,23 @@
+.input-component {
+  display: flex;
+
+  input {
+    padding: 8px;
+    width: 400px;
+    border: 1px solid #999a9c;
+    border-radius: 2px 0 0 2px;
+    border-right: 0;
+    }
+
+  button {
+    border: 0;
+
+    background-color: #3356d6;
+    color: #fff;
+    padding: 8px;
+
+    border-radius: 0 2px 2px 0;
+  }
+}
+
+
