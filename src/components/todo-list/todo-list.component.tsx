@@ -15,7 +15,7 @@ const TodoList = () => {
     const [list, addItem, updateItem, removeItem] = useList<ITodoItem>([]);
     const addNewTodoItem = (text: string) => {
         if (text !== '') {
-            addItem({ text, checked: false })
+            addItem({ text, checked: false });
         }
     }
     const handleOnChecked = (id: string) => {
@@ -28,10 +28,6 @@ const TodoList = () => {
             removeItem(id);
         }
     };
-
-    useEffect(() => {
-        console.log(list);
-    },[list])
 
     return (
         <div className="todo-list">
@@ -51,4 +47,3 @@ const TodoList = () => {
 }
 
 export default TodoList;
-
