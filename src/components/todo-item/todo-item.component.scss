@@ -17,6 +17,17 @@
     }
   }
 
+  .block-picker {
+    display: none;
+
+  }
+
+  &:hover{
+    .block-picker {
+      display: block;
+    }
+  }
+
   button {
     margin-left: auto;
   }
